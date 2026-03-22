@@ -1,0 +1,182 @@
+@import 'tailwindcss';
+@import 'diff2html/bundles/css/diff2html.min.css';
+
+/* ── App theme tokens ── */
+:root {
+  --dd-bg: #f5f5f5;
+  --dd-bg-surface: #ffffff;
+  --dd-bg-raised: #f0f0f0;
+  --dd-bg-input: #ffffff;
+  --dd-border: #d4d4d8;
+  --dd-border-subtle: #e4e4e7;
+  --dd-text: #18181b;
+  --dd-text-secondary: #52525b;
+  --dd-text-muted: #a1a1aa;
+  --dd-accent: #7c3aed;
+  --dd-accent-hover: #6d28d9;
+  --dd-accent-text: #ffffff;
+  --dd-red: #dc2626;
+  --dd-green: #16a34a;
+  --dd-blue: #2563eb;
+  --dd-drop-border: #d4d4d8;
+  --dd-drop-hover: #a1a1aa;
+  --dd-drop-active-border: #60a5fa;
+  --dd-drop-active-bg: rgba(96, 165, 250, 0.08);
+  --dd-drop-ok-border: rgba(22, 163, 74, 0.4);
+  --dd-drop-ok-bg: rgba(22, 163, 74, 0.05);
+  --dd-drop-err-border: rgba(220, 38, 38, 0.4);
+  --dd-drop-err-bg: rgba(220, 38, 38, 0.05);
+  --dd-toggle-bg: #e4e4e7;
+  --dd-toggle-active: #ffffff;
+  --dd-toggle-text: #52525b;
+  --dd-toggle-text-active: #18181b;
+  --dd-btn-ring: #d4d4d8;
+
+  /* Logo colors */
+  --dd-logo-back: #e4e4e7;
+  --dd-logo-back-stroke: #d4d4d8;
+  --dd-logo-front: #ffffff;
+  --dd-logo-front-stroke: #a1a1aa;
+  --dd-logo-ctx: #a1a1aa;
+  --dd-logo-glass: #ffffff;
+  --dd-logo-glass-stroke: #7c3aed;
+}
+
+:root.dark {
+  --dd-bg: #1e1e2e;
+  --dd-bg-surface: #1e1e2e;
+  --dd-bg-raised: #181825;
+  --dd-bg-input: #313244;
+  --dd-border: #45475a;
+  --dd-border-subtle: #313244;
+  --dd-text: #cdd6f4;
+  --dd-text-secondary: #bac2de;
+  --dd-text-muted: #7f849c;
+  --dd-accent: #cba6f7;
+  --dd-accent-hover: #b490e0;
+  --dd-accent-text: #1e1e2e;
+  --dd-red: #f38ba8;
+  --dd-green: #a6e3a1;
+  --dd-blue: #89b4fa;
+  --dd-drop-border: #45475a;
+  --dd-drop-hover: #585b70;
+  --dd-drop-active-border: #89b4fa;
+  --dd-drop-active-bg: rgba(137, 180, 250, 0.1);
+  --dd-drop-ok-border: rgba(166, 227, 161, 0.5);
+  --dd-drop-ok-bg: rgba(166, 227, 161, 0.05);
+  --dd-drop-err-border: rgba(243, 139, 168, 0.5);
+  --dd-drop-err-bg: rgba(243, 139, 168, 0.05);
+  --dd-toggle-bg: #313244;
+  --dd-toggle-active: #45475a;
+  --dd-toggle-text: #7f849c;
+  --dd-toggle-text-active: #cdd6f4;
+  --dd-btn-ring: #45475a;
+
+  --dd-logo-back: #313244;
+  --dd-logo-back-stroke: #45475a;
+  --dd-logo-front: #1e1e2e;
+  --dd-logo-front-stroke: #585b70;
+  --dd-logo-ctx: #585b70;
+  --dd-logo-glass: #1e1e2e;
+  --dd-logo-glass-stroke: #cba6f7;
+}
+
+/* ── diff2html light variables ── */
+:root {
+  --d2h-bg-color: #ffffff;
+  --d2h-border-color: #d4d4d8;
+  --d2h-dim-color: #a1a1aa;
+  --d2h-line-border-color: #e4e4e7;
+  --d2h-file-header-bg-color: #f5f5f5;
+  --d2h-file-header-border-color: #d4d4d8;
+  --d2h-empty-placeholder-bg-color: #f5f5f5;
+  --d2h-empty-placeholder-border-color: #e4e4e7;
+  --d2h-selected-color: rgba(37, 99, 235, 0.1);
+  --d2h-ins-bg-color: rgba(22, 163, 74, 0.08);
+  --d2h-ins-border-color: rgba(22, 163, 74, 0.2);
+  --d2h-ins-highlight-bg-color: rgba(22, 163, 74, 0.2);
+  --d2h-ins-label-color: #16a34a;
+  --d2h-del-bg-color: rgba(220, 38, 38, 0.06);
+  --d2h-del-border-color: rgba(220, 38, 38, 0.15);
+  --d2h-del-highlight-bg-color: rgba(220, 38, 38, 0.18);
+  --d2h-del-label-color: #dc2626;
+  --d2h-change-del-color: rgba(234, 179, 8, 0.1);
+  --d2h-change-ins-color: rgba(22, 163, 74, 0.1);
+  --d2h-info-bg-color: rgba(37, 99, 235, 0.05);
+  --d2h-info-border-color: rgba(37, 99, 235, 0.15);
+  --d2h-change-label-color: #ca8a04;
+  --d2h-moved-label-color: #2563eb;
+}
+
+/* ── diff2html dark variables ── */
+:root.dark {
+  --d2h-bg-color: #1e1e2e;
+  --d2h-border-color: #313244;
+  --d2h-dim-color: #585b70;
+  --d2h-line-border-color: #313244;
+  --d2h-file-header-bg-color: #181825;
+  --d2h-file-header-border-color: #313244;
+  --d2h-empty-placeholder-bg-color: #181825;
+  --d2h-empty-placeholder-border-color: #313244;
+  --d2h-selected-color: rgba(137, 180, 250, 0.15);
+  --d2h-ins-bg-color: rgba(166, 227, 161, 0.1);
+  --d2h-ins-border-color: rgba(166, 227, 161, 0.25);
+  --d2h-ins-highlight-bg-color: rgba(166, 227, 161, 0.3);
+  --d2h-ins-label-color: #a6e3a1;
+  --d2h-del-bg-color: rgba(243, 137, 153, 0.1);
+  --d2h-del-border-color: rgba(243, 137, 153, 0.25);
+  --d2h-del-highlight-bg-color: rgba(243, 137, 153, 0.3);
+  --d2h-del-label-color: #f38ba8;
+  --d2h-change-del-color: rgba(249, 226, 175, 0.1);
+  --d2h-change-ins-color: rgba(166, 227, 161, 0.15);
+  --d2h-info-bg-color: rgba(137, 180, 250, 0.08);
+  --d2h-info-border-color: rgba(137, 180, 250, 0.2);
+  --d2h-change-label-color: #f9e2af;
+  --d2h-moved-label-color: #89b4fa;
+}
+
+/* ── diff2html structural overrides ── */
+.d2h-file-header {
+  display: none;
+}
+
+.d2h-wrapper {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: var(--dd-text);
+}
+
+.d2h-code-line-ctn {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--dd-text);
+}
+
+.d2h-code-line-prefix {
+  color: var(--dd-text-muted);
+}
+
+.d2h-file-diff {
+  border: none;
+}
+
+.d2h-file-wrapper {
+  border-color: var(--dd-border-subtle);
+}
+
+.d2h-files-diff {
+  width: 100%;
+}
+
+.d2h-file-side-diff {
+  margin-bottom: 0;
+}
+
+.d2h-info .d2h-code-line-ctn {
+  color: var(--dd-text-muted);
+}
+
+.d2h-tag {
+  background-color: var(--dd-bg-raised);
+  color: var(--dd-text-muted);
+}
